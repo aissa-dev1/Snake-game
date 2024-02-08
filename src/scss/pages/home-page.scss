@@ -1,0 +1,99 @@
+.home-page {
+  @include pageCard;
+  @include flexCol;
+  gap: 1rem;
+
+  .start-paragraphs {
+    @include flexCol;
+    gap: 0.5rem;
+
+    .start-message {
+      font-weight: 500;
+    }
+  }
+
+  .navigation {
+    display: grid;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.3rem 0.7rem;
+      background-color: var(--main-color);
+      color: var(--main-bg);
+    }
+  }
+
+  footer {
+    @include flexCol;
+    gap: 0.5rem;
+    color: var(--home-footer-p);
+
+    p {
+      font-weight: 500;
+
+      span,
+      a {
+        font-weight: bold;
+        color: var(--main-color);
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .home-page {
+    text-align: center;
+
+    .navigation {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .home-page {
+    text-align: center;
+
+    .navigation {
+      grid-template-columns: repeat(2, 1fr);
+
+      button:last-child {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .home-page {
+    text-align: left;
+
+    .navigation {
+      grid-template-columns: repeat(3, 1fr);
+
+      button:last-child {
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

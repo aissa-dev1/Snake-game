@@ -1,0 +1,6 @@
+@mixin styledBtn {
+  border: none;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  cursor: pointer;
+}

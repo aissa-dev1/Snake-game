@@ -1,0 +1,89 @@
+.scenery-page {
+  @include pageCard;
+  @include flexCol;
+  gap: 1rem;
+
+  .start-paragraphs {
+    @include flexCol;
+    gap: 0.5rem;
+
+    .header {
+      @include flexRow;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        padding: 0.3rem 0.7rem;
+        background-color: var(--main-color);
+        color: var(--main-bg);
+      }
+    }
+
+    .start-message {
+      font-weight: 500;
+    }
+  }
+
+  .sceneries-container {
+    display: grid;
+    gap: 0.5rem;
+
+    .scenery-container {
+      @include flexCenter("row");
+      background-color: var(--main-color);
+      color: var(--main-bg);
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.25rem;
+      height: 50px;
+      border-radius: var(--radius);
+      cursor: pointer;
+
+      &.active {
+        background-color: #808080;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .scenery-page {
+    text-align: center;
+
+    .sceneries-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .scenery-page {
+    text-align: center;
+
+    .sceneries-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .scenery-page {
+    text-align: left;
+
+    .sceneries-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .scenery-page {
+    .sceneries-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.hidden {
+  display: none;
+}
+
+.navigation-btn {
+  @include styledBtn;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.styled-btn {
+  @include styledBtn;
+}

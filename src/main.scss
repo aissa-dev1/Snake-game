@@ -1,0 +1,83 @@
+@import "./scss/animations/animations.scss";
+@import "./scss/mixins/mixins.scss";
+@import "./scss/pages/pages.scss";
+@import "./scss/helpers/classes.scss";
+
+:root {
+  --main-bg: #fff;
+  --main-color: #333;
+
+  --radius: 0;
+
+  --board-bg: #808080;
+  --snake-bg: #333;
+  --board-edges: #fff;
+
+  --home-footer-p: #888;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include flexCenter("col");
+  height: 100vh;
+  font-family: system-ui;
+  background-color: #f0f0f0;
+  color: #333333;
+
+  &.dark {
+    --main-bg: #333;
+    --main-color: #fff;
+    --home-footer-p: #fff;
+  }
+
+  &.rounded {
+    --radius: 4px;
+  }
+
+  &.default-scenery {
+    --board-bg: #333;
+    --snake-bg: #fff;
+    --snake-color: #333;
+    --board-edges: #808080;
+  }
+
+  &.nature-scenery {
+    --board-bg: #212121;
+    --snake-bg: #4caf50;
+    --snake-color: #333;
+    --board-edges: #8d6e63;
+  }
+
+  &.smooth-nature-scenery {
+    --board-bg: #8fbc8f;
+    --snake-bg: #6b8e23;
+    --snake-color: #333;
+    --board-edges: #2f4f4f;
+  }
+
+  &.space-scenery {
+    --board-bg: #9c27b0;
+    --snake-bg: #ffeb3b;
+    --snake-color: #333;
+    --board-edges: #333;
+  }
+
+  &.winter-scenery {
+    --board-bg: #e4e3e3;
+    --snake-bg: #333;
+    --snake-color: #fff;
+    --board-edges: #808080;
+  }
+
+  &.primal-scenery {
+    --board-bg: #808080;
+    --snake-bg: #333;
+    --snake-color: #fff;
+    --board-edges: #fff;
+  }
+}

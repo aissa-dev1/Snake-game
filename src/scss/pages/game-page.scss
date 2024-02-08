@@ -1,0 +1,177 @@
+.game-page {
+  @include flexCenter("col");
+  gap: 8px;
+
+  .game-options {
+    width: 750px;
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+
+    .property-container {
+      padding: 0.3rem 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      background-color: var(--main-bg);
+      color: var(--main-color);
+      text-align: center;
+      border-radius: var(--radius);
+
+      span {
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .board {
+    position: relative;
+    background-color: var(--board-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+
+    &.edges {
+      border: 4px solid var(--board-edges);
+    }
+
+    .snake {
+      @include flexCenter("row");
+      position: absolute;
+      background-color: var(--snake-bg);
+      color: var(--snake-color);
+      transition: background-color 0.3s;
+      border-radius: var(--radius);
+
+      .direction {
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    .food-container,
+    .energy-container {
+      .entity {
+        animation: pulse 0.5s infinite alternate;
+      }
+    }
+
+    .food-container,
+    .walls,
+    .energy-container {
+      .entity {
+        position: absolute;
+        @include flexCenter("row");
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .snake-controls {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+
+    button {
+      @include styledBtn;
+      padding: 0.3rem 0.7rem;
+      background-color: var(--main-bg);
+      color: var(--main-color);
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+
+    button {
+      padding: 0.3rem 0.7rem;
+      background-color: var(--main-bg);
+      color: var(--main-color);
+      font-weight: bold;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game-page {
+    .game-options,
+    .navigation,
+    .snake-controls {
+      width: 100%;
+      padding: 0 0.25rem;
+    }
+
+    .game-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .snake-controls {
+      display: grid;
+    }
+
+    .navigation {
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .game-page {
+    .game-options,
+    .navigation,
+    .snake-controls {
+      width: 600px;
+    }
+
+    .game-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .snake-controls {
+      display: grid;
+    }
+
+    .navigation {
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .game-page {
+    .game-options,
+    .navigation,
+    .snake-controls {
+      width: 750px;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .game-page {
+    .game-options {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .snake-controls {
+      display: none;
+    }
+
+    .navigation {
+      padding-top: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}

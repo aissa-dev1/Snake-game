@@ -1,0 +1,8 @@
+@mixin pageCard {
+  width: 100%;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+  border-radius: calc(var(--radius) * 2);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,103 @@
+.settings-page {
+  @include pageCard;
+  @include flexCol;
+  gap: 1rem;
+
+  .start-paragraphs {
+    @include flexCol;
+    gap: 0.5rem;
+
+    .header {
+      @include flexRow;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        padding: 0.3rem 0.7rem;
+        background-color: var(--main-color);
+        color: var(--main-bg);
+      }
+    }
+
+    .start-message {
+      font-weight: 500;
+    }
+  }
+
+  .settings-container {
+    display: grid;
+    gap: 0.5rem;
+
+    .setting {
+      @include flexCol;
+      gap: 0.5rem;
+
+      h3 {
+        text-align: center;
+      }
+
+      button {
+        width: 100%;
+        font-size: 0.85rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        padding: 0.3rem 0.7rem;
+
+        &.off {
+          background-color: #ff9b9b;
+          color: #000;
+        }
+
+        &.on {
+          background-color: #a1eebd;
+          color: #fff;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .settings-page {
+    text-align: center;
+
+    .settings-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .settings-page {
+    text-align: center;
+
+    .settings-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .settings-page {
+    text-align: left;
+
+    .settings-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .settings-page {
+    .settings-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

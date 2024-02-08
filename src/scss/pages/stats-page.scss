@@ -1,0 +1,94 @@
+.stats-page {
+  @include pageCard;
+
+  .stats-head {
+    @include flexRow;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      background-color: #ff9b9b;
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+    }
+  }
+
+  .start-message {
+    font-weight: 500;
+    margin-top: 0.25rem;
+  }
+
+  .stats {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .stats-property {
+      @include flexRow;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--main-color);
+      color: var(--main-bg);
+      padding: 0.5rem;
+      border-radius: var(--radius);
+    }
+  }
+
+  .navigation {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    button {
+      padding: 0.3rem 0.7rem;
+      background-color: var(--main-color);
+      color: var(--main-bg);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .stats-page {
+    text-align: center;
+
+    .stats,
+    .navigation {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .stats-page {
+    text-align: center;
+
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+
+      .stats-property:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    .navigation {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .stats-page {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .stats-page {
+    .stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}

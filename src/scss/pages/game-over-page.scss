@@ -1,0 +1,66 @@
+.game-over-page {
+  @include pageCard;
+  @include flexCol;
+  gap: 1rem;
+
+  .start-paragraphs {
+    @include flexCol;
+    gap: 0.5rem;
+
+    .start-message {
+      font-weight: 500;
+    }
+  }
+
+  .navigation {
+    display: grid;
+    gap: 0.5rem;
+
+    button {
+      background-color: var(--main-color);
+      color: var(--main-bg);
+      padding: 0.3rem 0.7rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game-over-page {
+    text-align: center;
+
+    .navigation {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .game-over-page {
+    text-align: center;
+
+    .navigation {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .game-over-page {
+    text-align: left;
+
+    .navigation {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+  .game-over-page {
+    .navigation {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

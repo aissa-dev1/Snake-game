@@ -1,0 +1,92 @@
+.how-to-play-page {
+  @include pageCard;
+
+  .start-paragraphs {
+    @include flexCol;
+    gap: 0.25rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .navigation {
+    @include flexRow;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      padding: 0.3rem 0.7rem;
+      background-color: var(--main-color);
+      color: var(--main-bg);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .how-to-play-page {
+    ol {
+      .computer-control {
+        display: none;
+      }
+
+      .phone-control {
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .how-to-play-page {
+    ol {
+      .computer-control {
+        display: none;
+      }
+
+      .phone-control {
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .how-to-play-page {
+    ol {
+      .computer-control {
+        display: block;
+      }
+
+      .phone-control {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+}

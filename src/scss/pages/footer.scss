@@ -1,0 +1,21 @@
+.game-information {
+  @include flexCenter("col");
+  gap: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.3rem 0;
+  background-color: var(--main-bg);
+  color: var(--main-color);
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+
+    span {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+  }
+}

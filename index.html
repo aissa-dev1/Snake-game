@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/main.scss" />
+    <title>Snake game</title>
+  </head>
+  <body class="rounded">
+    <main id="app" class="container">
+      <header class="home-page page hidden">
+        <section class="start-paragraphs">
+          <h3 id="game_name"></h3>
+
+          <p class="start-message">Welcome there. Can you beat the snake impediments?</p>
+        </section>
+
+        <section class="navigation">
+          <button class="game-page-btn navigation-btn">Start game</button>
+
+          <button class="settings-page-btn navigation-btn">Settings</button>
+
+          <button class="stats-page-btn navigation-btn">Stats</button>
+        </section>
+
+        <footer>
+          <p>Don't know where to start? <span id="how_to_play_btn">How to play</span></p>
+
+          <p>
+            Follow us on
+            <a href="https://www.instagram.com/aissa_bedr/" target="_blank">Instagram</a>
+          </p>
+        </footer>
+      </header>
+
+      <header class="stats-page page hidden">
+        <section class="stats-head">
+          <h3>Game stats</h3>
+
+          <button id="game_stats_reset_btn" class="styled-btn">Reset</button>
+        </section>
+
+        <p class="start-message">Here you can see your game progress!</p>
+
+        <section class="stats">
+          <div class="stats-property">
+            <h4>High score</h4>
+
+            <p id="stats_high_score"></p>
+          </div>
+
+          <div class="stats-property">
+            <h4>Collected food</h4>
+
+            <p id="stats_eaten_food"></p>
+          </div>
+
+          <div class="stats-property">
+            <h4>Collected energy</h4>
+
+            <p id="stats_eaten_energy"></p>
+          </div>
+
+          <div class="stats-property">
+            <h4>Sprint times</h4>
+
+            <p id="stats_sprint_times"></p>
+          </div>
+
+          <div class="played-time stats-property">
+            <h4>Played times</h4>
+
+            <p id="stats_played_times"></p>
+          </div>
+        </section>
+
+        <section class="navigation">
+          <button class="home-page-btn navigation-btn">Home</button>
+
+          <button class="settings-page-btn navigation-btn">Settings</button>
+        </section>
+      </header>
+
+      <header class="how-to-play-page page hidden">
+        <section class="start-paragraphs">
+          <h3>Snake Game - How to Play</h3>
+
+          <p>Welcome to the Snake Game! Follow the instructions below to play:</p>
+        </section>
+
+        <ol>
+          <section class="computer-control">
+            <li class="title">Use the arrow keys to control the snake's direction:</li>
+
+            <ul>
+              <li><strong>Left Arrow:</strong> Move left</li>
+
+              <li><strong>Up Arrow:</strong> Move up</li>
+
+              <li><strong>Right Arrow:</strong> Move right</li>
+
+              <li><strong>Down Arrow:</strong> Move down</li>
+            </ul>
+          </section>
+
+          <section class="phone-control">
+            <li class="title">Use the buttons in the bottom to control the snake's direction:</li>
+
+            <ul>
+              <li><strong>Button left:</strong> Move left</li>
+
+              <li><strong>Button up:</strong> Move up</li>
+
+              <li><strong>Button right:</strong> Move right</li>
+
+              <li><strong>Button down:</strong> Move down</li>
+            </ul>
+          </section>
+
+          <li>Press the <strong>Space Bar</strong> to sprint and increase your speed temporarily.</li>
+
+          <li>Click in the <strong>same direction</strong> as the snake to sprint on computer and touch devices.</li>
+
+          <li>Avoid collisions with walls.</li>
+
+          <li>Eat the food to earn points.</li>
+
+          <li>Collect energy for earning more health.</li>
+
+          <li>The game ends if the snake runs out of health.</li>
+        </ol>
+
+        <div class="navigation">
+          <button class="home-page-btn navigation-btn">Home</button>
+
+          <p class="have-fun">Have fun playing the Snake Game!</p>
+        </div>
+      </header>
+
+      <header class="settings-page page hidden">
+        <section class="start-paragraphs">
+          <div class="header">
+            <h3>Settings</h3>
+
+            <button class="home-page-btn navigation-btn">Home</button>
+          </div>
+
+          <p class="start-message">Here you can choose your preferred settings!</p>
+        </section>
+
+        <section class="settings-container"></section>
+      </header>
+
+      <header class="game-page page hidden">
+        <section class="game-options">
+          <div class="health-container property-container">Health: <span id="health"></span></div>
+
+          <div class="score-container property-container">Score: <span id="score"></span></div>
+
+          <div class="eaten-food-container property-container">Food: <span id="eaten_food"></span></div>
+
+          <div class="sprint-container property-container">Sprint: <span id="sprint"></span></div>
+
+          <div class="high-score-container property-container">High score: <span id="high_score"></span></div>
+
+          <div class="timer-container property-container">
+            Timer: <span id="minutes"></span><span>:</span><span id="seconds"></span>
+          </div>
+        </section>
+
+        <section class="board" id="board">
+          <div id="snake" class="snake">
+            <p id="snake_direction" class="direction">?</p>
+          </div>
+
+          <div class="food-container"></div>
+
+          <div class="walls"></div>
+
+          <div class="energy-container"></div>
+        </section>
+
+        <section class="snake-controls">
+          <button id="snake_up_btn">Up</button>
+
+          <button id="snake_right_btn">Right</button>
+
+          <button id="snake_left_btn">Left</button>
+
+          <button id="snake_down_btn">Down</button>
+        </section>
+
+        <section class="navigation">
+          <button class="home-page-btn navigation-btn">Home</button>
+
+          <button class="settings-page-btn navigation-btn">Settings</button>
+        </section>
+      </header>
+
+      <header class="game-over-page page hidden">
+        <section class="start-paragraphs">
+          <h3>Game over</h3>
+
+          <p class="start-message">Well played, you can try again!</p>
+        </section>
+
+        <section class="navigation">
+          <button class="game-page-btn navigation-btn">Restart game</button>
+
+          <button class="home-page-btn navigation-btn">Home</button>
+
+          <button class="stats-page-btn navigation-btn">Stats</button>
+
+          <button class="settings-page-btn navigation-btn">Settings</button>
+        </section>
+      </header>
+
+      <header class="scenery-page page hidden">
+        <section class="start-paragraphs">
+          <div class="header">
+            <h3>Game scenery</h3>
+
+            <div class="navigation">
+              <button class="settings-page-btn navigation-btn">Back</button>
+
+              <button class="home-page-btn navigation-btn">Home</button>
+            </div>
+          </div>
+
+          <p class="start-message">Choose your favourite scenery!</p>
+        </section>
+
+        <section class="sceneries-container"></section>
+      </header>
+
+      <footer class="game-information">
+        <p class="created-by">Created by <span id="game_developer"></span></p>
+
+        <p class="version">Version <span id="game_version"></span></p>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
